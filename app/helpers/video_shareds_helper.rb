@@ -1,0 +1,2 @@
+module VideoSharedsHelper
+end
