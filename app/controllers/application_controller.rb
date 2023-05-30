@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     skip_before_action :verify_authenticity_token
-    before_action :authenticate_user, except: [:login, :signup]
+    before_action :authenticate_user, except: [:login, :signup, :index]
 
     def authenticate_user
         authorization_header = request.headers[:authorization]
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
             token = authorization_header.split(' ')[1]
             secret_key = Rails.application.secrets.secret_key_base
             begin
-                decoded_token = JWT.decode(token, secret_key)
+                decoded_token = JWT.decode(token, secret_key, true, algorithm: 'HS256')
                 payload = decoded_token.first
                 user_id = payload['user_id']
                 
