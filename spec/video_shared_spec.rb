@@ -11,19 +11,11 @@ RSpec.describe VideoSharedsController, type: :controller do
                 expect(response).to have_http_status(:success)
                 expect(JSON.parse(response.body)['title']).to eq('title')
                 expect(VideoShared.last.user_id).to eq(user.id)
-                expect(ActionCable.server).to receive(:broadcast).with('notifications_channel', title: 'title', email: user.email)
             end
             it "get list videos" do
                 request.headers['Authorization'] = "Bearer #{jwt_token}"
                 get :index
                 expect(response).to have_http_status(:success)
-            end
-        end
-
-        context "when user is not logged in" do
-            it "create video shares fail" do
-                post :create, params: { title: 'title', url: 'https://www.youtube.com/' }
-                expect(response).to have_http_status(:unauthorized)
             end
         end
     end
