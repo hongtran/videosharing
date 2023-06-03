@@ -15,7 +15,6 @@ Run commands follow step by step
 * git clone https://github.com/hongtran/videosharing.git
 * cd videosharing
 * bundle install
-* rails server
 
 ## React - Frontend
 * git clone https://github.com/hongtran/videosharingUI.git
@@ -32,7 +31,7 @@ For local we using sqlite3, for prod using Postgresql
 rails server
 ## React - Frontend
 Update file env local with API url of backend above, then run
-npm start
+* npm start
 
 # Usage
 * Open homepage on browser, then login with user1: `john@example.com/password`
