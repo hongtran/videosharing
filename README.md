@@ -34,9 +34,13 @@ Update file env local with API url of backend above, then run
 * npm start
 
 # Usage
+live site: https://hongtran.github.io/videosharingUI/
 * Open homepage on browser, then login with user1: `john@example.com/password`
 * Open homepage on private mode or other browser, then login with user2: `jane@example.com/password`
 * Back to user1, click link `Share a movie` on top menu, then enter any link youtbube and title
 * Will display notification popup on user2
+
+## Demo
+https://www.youtube.com/watch?v=vxsdnC1Iqiw
 
 # Troubleshooting
