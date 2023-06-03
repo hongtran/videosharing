@@ -1,25 +1,43 @@
-# README
+# Introduction
+Build a web app for sharing YouTube videos, key features:
+* Login
+* Sharing YouTube videos
+* Real-time notifications for new video shares
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Prerequisites
+* Backend: Rails 
+* Frontend: React
+* Database: Sqlite3 for locally, Postgresql for prod
 
-Things you may want to cover:
+# Installation & Configuration
+Run commands follow step by step
+## Rails - Backend
+* git clone https://github.com/hongtran/videosharing.git
+* cd videosharing
+* bundle install
+* rails server
 
-* Ruby version
+## React - Frontend
+* git clone https://github.com/hongtran/videosharingUI.git
+* cd videosharingUI
+* npm install
 
-* System dependencies
+# Database Setup
+For local we using sqlite3, for prod using Postgresql
+* rails db:migrate
+* rails db:seed
 
-* Configuration
+# Running the Application
+## Rails - Backend
+rails server
+## React - Frontend
+Update file env local with API url of backend above, then run
+npm start
 
-* Database creation
+# Usage
+* Open homepage on browser, then login with user1: `john@example.com/password`
+* Open homepage on private mode or other browser, then login with user2: `jane@example.com/password`
+* Back to user1, click link `Share a movie` on top menu, then enter any link youtbube and title
+* Will display notification popup on user2
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# videosharing
+# Troubleshooting
